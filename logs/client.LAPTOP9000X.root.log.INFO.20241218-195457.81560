@@ -1,0 +1,7 @@
+Log file created at: 2024/12/18 19:54:57
+Running on machine: LAPTOP9000X
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I1218 19:54:57.645323 81560 client.cpp:132] [Info] Connected to server at 127.10.0.1:5346
+I1218 19:54:57.646234 81560 client.cpp:149] [Info] Received message from server: 
+I1218 19:55:02.079353 81560 client.cpp:149] [Info] Received message from server: 
+I1218 19:56:21.566890 81568 client.cpp:84] [Info] Server closed connection
