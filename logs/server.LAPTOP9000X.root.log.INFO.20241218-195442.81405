@@ -1,4 +1,0 @@
-Log file created at: 2024/12/18 19:54:42
-Running on machine: LAPTOP9000X
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I1218 19:54:42.159471 81405 server.cpp:206] [Info] Server is listening on port 5346...
