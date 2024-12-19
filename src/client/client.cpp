@@ -69,7 +69,6 @@ void handle(int clientSocket) {
         if (bytesReceived > 0) {
             buffer[bytesReceived] = '\0';
             string message(buffer);
-            // LOG(INFO) << "[Info] Received message from server: " << buffer;
 
             // 加锁
             {
@@ -171,6 +170,8 @@ int main(int argc, char* argv[]) {
                     Packet pkt(PacketType::REQUEST, ContentType::RequestCloseConnection, packetID++);
                     string message = pkt.encode();
                     send(clientSocket, message.c_str(), message.length(), 0);
+
+                    shutdown(clientSocket, SHUT_RDWR);
                     // exit_flag = true;
                     close(clientSocket);
                     break;
@@ -210,6 +211,9 @@ int main(int argc, char* argv[]) {
                         Packet pkt(PacketType::REQUEST, ContentType::RequestCloseConnection, packetID++);
                         string message = pkt.encode();
                         send(clientSocket, message.c_str(), message.length(), 0);
+
+                        shutdown(clientSocket, SHUT_RDWR);
+                        close(clientSocket);
                         exit_flag = true;
                     }
                     break;
@@ -228,7 +232,7 @@ int main(int argc, char* argv[]) {
     }
     
     // 关闭socket
-    close(clientSocket);
+    // close(clientSocket);
 
     return 0;
 }

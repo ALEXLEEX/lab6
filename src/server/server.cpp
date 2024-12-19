@@ -152,6 +152,7 @@ void handleClient(int clientSocket) {
                 handleSendMessageRequest(clientSocket, pktIn.getID(), pktIn.getArgs()[0], pktIn.getArgs()[1]);
                 break;
             case ContentType::RequestCloseConnection:
+                handleCloseConnectionRequest(clientSocket, pktIn.getID());
                 exit_flag = false;
                 break;
             default:
